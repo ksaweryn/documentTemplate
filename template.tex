@@ -1,27 +1,32 @@
 \documentclass[12pt,twoside]{report}
 \usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{helvet}
 \usepackage{graphicx}
 \graphicspath{ {imagenes/} }
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\titleName}{title here}
+\newcommand{\authorName}{author name here}
+\newcommand{\asesorName}{asesor name here}
+\renewcommand{\baselinestretch}{1.5}
+\title{\titleName}
+\author{\authorName}
+\date{\today}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{Thesis Title}
+\fancyhead[RO,LE]{\titleName}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
-\fancyfoot[LO,CE]{Chapter \thechapter}
-\fancyfoot[CO,RE]{Author Name}
+\fancyfoot[CO,RE]{\authorName}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-\title{Thesis Title}
-\author{Author Name}
-\date{Day Month Year}
 
 \begin{document}
-
 \input{titlePage}
-
 \end{document}
