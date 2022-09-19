@@ -1,35 +1,39 @@
 \documentclass[12pt,twoside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage{helvet}
 \usepackage{graphicx}
 \graphicspath{ {imagenes/} }
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\familydefault}{\sfdefault}
-\newcommand{\titleName}{title here}
-\newcommand{\authorName}{author name here}
-\newcommand{\asesorName}{asesor name here}
+\newcommand{\titleName}{título aquí}
+\newcommand{\authorName}{autor aquí}
+\newcommand{\asesorName}{Asesor/profe aquí}
+\newcommand{\universityName}{Universidad aquí}
+\newcommand{\schoolName }{Facultad aquí}
 \renewcommand{\baselinestretch}{1.5}
 \title{\titleName}
 \author{\authorName}
 \date{\today}
 
-\usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[RO,LE]{\titleName}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
+% \fancyfoot[LO,CE]{Chapter \thechapter}
 \fancyfoot[CO,RE]{\authorName}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-\usepackage[style=authoryear,sorting=none]{biblatex}
-\addbibresource{{bibliografia/my_collection.bib}}
-
 \begin{document}
+
 \input{titlePage}
-\printbibliography
+Solo un ejemplo de cita\cite{Ciceron1967}
+
+
+\bibliography{bibliografia/referencias}
+\bibliographystyle{apalike}
+
 \end{document}
