@@ -1,39 +1,55 @@
-\documentclass[12pt,twoside]{report}
+\documentclass[12pt,twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage{helvet}
 \usepackage{graphicx}
 \graphicspath{ {imagenes/} }
 \usepackage{caption}
+\usepackage{csquotes}
 \usepackage{subcaption}
+
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
-\usepackage{fancyhdr}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\familydefault}{\sfdefault}
-\newcommand{\titleName}{título aquí}
-\newcommand{\authorName}{autor aquí}
-\newcommand{\asesorName}{Asesor/profe aquí}
-\newcommand{\universityName}{Universidad aquí}
-\newcommand{\schoolName }{Facultad aquí}
+\newcommand{\titleName}{Una definición preliminar de metafísica}
+\newcommand{\authorName}{Fernando Javier Borja Moretta}
+\newcommand{\asesorName}{Alejandro Villegas Muro}
+\newcommand{\universityName}{Universidad Autónoma de Chihuahua}
+\newcommand{\schoolName }{Facultad de Filosofía y Letras}
 \renewcommand{\baselinestretch}{1.5}
 \title{\titleName}
 \author{\authorName}
 \date{\today}
 
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[RO,LE]{\titleName}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 % \fancyfoot[LO,CE]{Chapter \thechapter}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage{etoolbox}
+\AfterEndEnvironment{eventlist}{\vspace{-1.5\baselineskip}}
 \fancyfoot[CO,RE]{\authorName}
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\usepackage[style=mla,backend=biber]{biblatex}
+\addbibresource{bibliografia/referencias.bib}
 \begin{document}
 
 \input{titlePage}
-Solo un ejemplo de cita\cite{Ciceron1967}
+\section{Introducción}
+Este trabajo presenta un esquema de la filosofía de la metafísica
+\section{Esquema}
+
+\section{Conclusiones}
+
+Solo un ejemplo de cita \autocite{Ciceron1967}
+hj
 
 
-\bibliography{bibliografia/referencias}
-\bibliographystyle{apalike}
-
+\newpage
+\printbibliography
 \end{document}
+
